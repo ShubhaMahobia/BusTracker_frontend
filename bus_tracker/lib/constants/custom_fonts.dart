@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 class CustomTextStyle {
   static TextStyle appBarTitle(BuildContext context) {
-    return GoogleFonts.plusJakartaSans(
+    return GoogleFonts.montserrat(
       fontWeight: FontWeight.w800,
       color: Colors.white,
       fontSize: 24,
@@ -12,10 +12,10 @@ class CustomTextStyle {
   }
 
   static TextStyle bodyText(BuildContext context) {
-    return GoogleFonts.plusJakartaSans(
-      fontWeight: FontWeight.w800,
+    return GoogleFonts.montserrat(
+      fontWeight: FontWeight.w600,
       color: Colors.black,
-      fontSize: 16,
+      fontSize: 24,
       letterSpacing: 0.2,
     );
   }

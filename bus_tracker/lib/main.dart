@@ -1,25 +1,27 @@
 import 'package:bus_tracker/constants/custom_fonts.dart';
 import 'package:bus_tracker/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 void main() {
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Bus Tracker',
+      title: 'Flutter Demo',
       theme: CustomTheme.lightTheme,
       darkTheme: CustomTheme.darkTheme,
       themeMode: ThemeMode.system,
-      home: const MyHomePage(
-        title: 'Bus Tracker',
-      ),
+      home: const MyHomePage(title: 'Bus Tracker'),
     );
   }
 }
@@ -43,6 +45,24 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    initialization();
+  }
+
+  void initialization() async {
+    // ignore_for_file: avoid_print
+    print('ready in 3...');
+    await Future.delayed(const Duration(seconds: 1));
+    print('ready in 2...');
+    await Future.delayed(const Duration(seconds: 1));
+    print('ready in 1...');
+    await Future.delayed(const Duration(seconds: 1));
+    print('go!');
+    FlutterNativeSplash.remove();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -56,13 +76,17 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'Button Pressed',
-              style: CustomTextStyle.bodyText(context),
+            SizedBox(
+              width: 250,
+              child: Text(
+                'You have pushed the button this many times:',
+                style: CustomTextStyle.bodyText(context),
+                textAlign: TextAlign.center,
+              ),
             ),
             Text(
               '$_counter',
-              style: CustomTextStyle.bodyText(context),
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
         ),
@@ -71,7 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
-      ),
+      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
