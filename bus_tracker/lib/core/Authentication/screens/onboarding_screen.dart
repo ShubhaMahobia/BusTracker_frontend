@@ -32,36 +32,90 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text(
-          'Bus Trakcer',
-          style: CustomTextStyle.appBarTitle(context),
-        ),
-      ),
+      backgroundColor: Colors.white,
       body: Stack(
         children: [
           LiquidSwipe(
             pages: [
-              Container(
-                color: Colors.blue,
-                child: const Center(
-                  child: Text('Screen 1'),
+              SizedBox(
+                width: MediaQuery.of(context).size.width,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Image.asset('assets/images/ob1.jpg'),
+                    ),
+                    Text(
+                      'Effortless Bus Tracking',
+                      style: CustomTextStyle.t2(context),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Text(
+                        'Experience hassle-free bus tracking with our intuitive app. Know your bus number, track its real-time location, and plan your  commute with precision. Say goodbye to uncertainties and hello to convenience',
+                        style: CustomTextStyle.t3(context),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ],
                 ),
               ),
-              Container(
-                color: Colors.white,
-                child: const Center(
-                  child: Text('Screen 2'),
+              SizedBox(
+                width: MediaQuery.of(context).size.width,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Image.asset('assets/images/ob1.jpg'),
+                    ),
+                    Text(
+                      'HHEHEHEHEHEHHEHE',
+                      style: CustomTextStyle.t2(context),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Text(
+                        'Experience hassle-free bus tracking with our intuitive app. Know your bus number, track its real-time location, and plan your  commute with precision. Say goodbye to uncertainties and hello to convenience',
+                        style: CustomTextStyle.t3(context),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ],
                 ),
               ),
-              Container(
-                color: Colors.green,
-                child: const Center(
-                  child: Text('Screen 3'),
+              SizedBox(
+                width: MediaQuery.of(context).size.width,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Image.asset('assets/images/ob1.jpg'),
+                    ),
+                    Text(
+                      'ANWIODANWOIDJAWOPD',
+                      style: CustomTextStyle.t2(context),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Text(
+                        'Experience hassle-free bus tracking with our intuitive app. Know your bus number, track its real-time location, and plan your  commute with precision. Say goodbye to uncertainties and hello to convenience',
+                        style: CustomTextStyle.t3(context),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],
+            slideIconWidget: const Icon(Icons.arrow_back_ios),
+            enableSideReveal: true,
+            enableLoop: false,
           )
         ],
       ),

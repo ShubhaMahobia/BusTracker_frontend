@@ -11,12 +11,30 @@ class CustomTextStyle {
     );
   }
 
-  static TextStyle bodyText(BuildContext context) {
+  static TextStyle t1(BuildContext context) {
     return GoogleFonts.montserrat(
       fontWeight: FontWeight.w600,
       color: Colors.black,
       fontSize: 24,
       letterSpacing: 0.2,
+    );
+  }
+
+  static TextStyle t2(BuildContext context) {
+    return GoogleFonts.montserrat(
+      fontWeight: FontWeight.w600,
+      color: Colors.grey,
+      fontSize: 18,
+      letterSpacing: 0.5,
+    );
+  }
+
+  static TextStyle t3(BuildContext context) {
+    return GoogleFonts.montserrat(
+      fontWeight: FontWeight.w500,
+      color: Colors.grey,
+      fontSize: 14,
+      letterSpacing: 0.5,
     );
   }
 }
