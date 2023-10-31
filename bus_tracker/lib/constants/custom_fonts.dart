@@ -23,7 +23,7 @@ class CustomTextStyle {
   static TextStyle t2(BuildContext context) {
     return GoogleFonts.montserrat(
       fontWeight: FontWeight.w600,
-      color: Colors.grey,
+      color: Colors.white,
       fontSize: 18,
       letterSpacing: 0.5,
     );
@@ -32,7 +32,25 @@ class CustomTextStyle {
   static TextStyle t3(BuildContext context) {
     return GoogleFonts.montserrat(
       fontWeight: FontWeight.w500,
-      color: Colors.grey,
+      color: Colors.white,
+      fontSize: 14,
+      letterSpacing: 0.5,
+    );
+  }
+
+  static TextStyle buttonText1(BuildContext context) {
+    return GoogleFonts.plusJakartaSans(
+      fontWeight: FontWeight.w900,
+      color: Colors.blue,
+      fontSize: 14,
+      letterSpacing: 0.5,
+    );
+  }
+
+  static TextStyle t4(BuildContext context) {
+    return GoogleFonts.montserrat(
+      fontWeight: FontWeight.w500,
+      color: Colors.black,
       fontSize: 14,
       letterSpacing: 0.5,
     );
