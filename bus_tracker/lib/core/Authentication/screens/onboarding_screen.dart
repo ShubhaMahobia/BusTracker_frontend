@@ -37,15 +37,22 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         children: [
           LiquidSwipe(
             pages: [
-              SizedBox(
+              Container(
+                color: Colors.lightBlue,
                 width: MediaQuery.of(context).size.width,
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
                   children: [
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.2,
+                    ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Image.asset('assets/images/ob1.jpg'),
+                      child: Image.asset('assets/images/ob1.png'),
+                    ),
+                    const SizedBox(
+                      height: 20,
                     ),
                     Text(
                       'Effortless Bus Tracking',
@@ -54,7 +61,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     Padding(
                       padding: const EdgeInsets.all(16.0),
                       child: Text(
-                        'Experience hassle-free bus tracking with our intuitive app. Know your bus number, track its real-time location, and plan your  commute with precision. Say goodbye to uncertainties and hello to convenience',
+                        'Track your bus in real-time, plan your commute hassle-free with our intuitive app. Say goodbye to uncertainties, hello to convenience.',
                         style: CustomTextStyle.t3(context),
                         textAlign: TextAlign.center,
                       ),
@@ -62,61 +69,94 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   ],
                 ),
               ),
-              SizedBox(
+              Container(
+                color: Colors.white,
                 width: MediaQuery.of(context).size.width,
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
                   children: [
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.2,
+                    ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Image.asset('assets/images/ob1.jpg'),
+                      child: Image.asset('assets/images/ob2.png'),
+                    ),
+                    const SizedBox(
+                      height: 20,
                     ),
                     Text(
-                      'HHEHEHEHEHEHHEHE',
-                      style: CustomTextStyle.t2(context),
+                      'College Commute, Simplified',
+                      style: CustomTextStyle.t2(context)
+                          .copyWith(color: Colors.blue),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(16.0),
                       child: Text(
-                        'Experience hassle-free bus tracking with our intuitive app. Know your bus number, track its real-time location, and plan your  commute with precision. Say goodbye to uncertainties and hello to convenience',
-                        style: CustomTextStyle.t3(context),
+                        'Effortless college commute! Get assigned a specific bus number, track it in real-time, and streamline your journey with our user-friendly app. Never miss a ride, save time, and arrive hassle-free.',
+                        style: CustomTextStyle.t3(context)
+                            .copyWith(color: Colors.blue),
                         textAlign: TextAlign.center,
                       ),
                     ),
                   ],
                 ),
               ),
-              SizedBox(
+              Container(
+                color: Colors.blue,
                 width: MediaQuery.of(context).size.width,
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
                   children: [
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.2,
+                    ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Image.asset('assets/images/ob1.jpg'),
+                      child: Image.asset('assets/images/ob3.png'),
+                    ),
+                    const SizedBox(
+                      height: 20,
                     ),
                     Text(
-                      'ANWIODANWOIDJAWOPD',
+                      'Empowering Your Travel',
                       style: CustomTextStyle.t2(context),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(16.0),
                       child: Text(
-                        'Experience hassle-free bus tracking with our intuitive app. Know your bus number, track its real-time location, and plan your  commute with precision. Say goodbye to uncertainties and hello to convenience',
+                        'Seize your travel experience! Our app offers precise bus tracking for punctual arrivals. College authorities gain transparent bus management. Enjoy a seamless journey, empowered by technology.',
                         style: CustomTextStyle.t3(context),
                         textAlign: TextAlign.center,
                       ),
                     ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.025,
+                    ),
+                    Container(
+                      height: 45,
+                      width: 250,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(5)),
+                      child: Center(
+                        child: Text(
+                          'Start your journey',
+                          style: CustomTextStyle.buttonText1(context),
+                        ),
+                      ),
+                    )
                   ],
                 ),
               ),
             ],
             slideIconWidget: const Icon(Icons.arrow_back_ios),
             enableSideReveal: true,
+            ignoreUserGestureWhileAnimating: true,
             enableLoop: false,
-          )
+          ),
         ],
       ),
     );
