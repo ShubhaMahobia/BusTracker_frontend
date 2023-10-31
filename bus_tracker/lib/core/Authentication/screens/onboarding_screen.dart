@@ -1,7 +1,11 @@
+import 'package:bus_tracker/common_widgets/Buttons/button_one.dart';
 import 'package:bus_tracker/constants/custom_fonts.dart';
+import 'package:bus_tracker/core/Authentication/controllers/onboarding_screen_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:get/get.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -29,13 +33,19 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     FlutterNativeSplash.remove();
   }
 
+  final controller = OnboardingScreenController();
+  int currentPage = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
+        alignment: Alignment.center,
         children: [
           LiquidSwipe(
+            onPageChangeCallback: controller.onPageChangeMethod,
+            liquidController: controller.liqcontroller,
             pages: [
               Container(
                 color: Colors.lightBlue,
@@ -135,19 +145,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.025,
                     ),
-                    Container(
-                      height: 45,
-                      width: 250,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(5)),
-                      child: Center(
-                        child: Text(
-                          'Start your journey',
-                          style: CustomTextStyle.buttonText1(context),
-                        ),
-                      ),
-                    )
+                    Button1(buttonText: 'Start your Journey', onPressed: () {}),
                   ],
                 ),
               ),
@@ -156,6 +154,20 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             enableSideReveal: true,
             ignoreUserGestureWhileAnimating: true,
             enableLoop: false,
+          ),
+          Obx(
+            () => Positioned(
+              bottom: 10,
+              child: AnimatedSmoothIndicator(
+                duration: const Duration(milliseconds: 200),
+                activeIndex: controller.currentPage.value,
+                count: 3,
+                effect: const WormEffect(
+                  activeDotColor: Colors.black,
+                  dotHeight: 5.0,
+                ),
+              ),
+            ),
           ),
         ],
       ),

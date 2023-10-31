@@ -46,4 +46,13 @@ class CustomTextStyle {
       letterSpacing: 0.5,
     );
   }
+
+  static TextStyle t4(BuildContext context) {
+    return GoogleFonts.montserrat(
+      fontWeight: FontWeight.w500,
+      color: Colors.black,
+      fontSize: 14,
+      letterSpacing: 0.5,
+    );
+  }
 }
