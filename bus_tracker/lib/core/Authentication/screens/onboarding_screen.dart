@@ -24,17 +24,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   void initialization() async {
     // ignore_for_file: avoid_print
     print('ready in 3...');
-    await Future.delayed(const Duration(milliseconds: 500));
+    await Future.delayed(const Duration(milliseconds: 300));
     print('ready in 2...');
-    await Future.delayed(const Duration(milliseconds: 500));
+    await Future.delayed(const Duration(milliseconds: 200));
     print('ready in 1...');
-    await Future.delayed(const Duration(milliseconds: 500));
+    await Future.delayed(const Duration(milliseconds: 100));
     print('go!');
     FlutterNativeSplash.remove();
   }
 
   final controller = OnboardingScreenController();
-  int currentPage = 0;
 
   @override
   Widget build(BuildContext context) {
