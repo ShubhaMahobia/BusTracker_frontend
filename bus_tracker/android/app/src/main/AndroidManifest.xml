@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.bus_tracker">
    <application
-        android:label="bus_tracker"
+        android:label="SnapTrack"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
