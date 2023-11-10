@@ -1,8 +1,8 @@
-import 'package:bus_tracker/core/Authentication/screens/login/login_screen.dart';
-import 'package:bus_tracker/core/Authentication/screens/onboarding/onboarding_screen.dart';
+import 'package:bus_tracker/core/Authentication/screens/signup/sign_up.dart';
 import 'package:bus_tracker/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:get/get.dart';
 
 void main() {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
@@ -39,12 +39,12 @@ class _MyAppState extends State<MyApp> {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: CustomTheme.lightTheme,
       darkTheme: CustomTheme.darkTheme,
       themeMode: ThemeMode.system,
-      home: const LoginScreen(),
+      home: const SignUpScreen(),
     );
   }
 }
