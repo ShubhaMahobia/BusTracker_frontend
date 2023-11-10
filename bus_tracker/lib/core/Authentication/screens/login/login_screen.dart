@@ -1,7 +1,9 @@
 import 'package:bus_tracker/common_widgets/Buttons/button_two.dart';
 import 'package:bus_tracker/constants/custom_fonts.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -158,6 +160,30 @@ class LoginScreen extends StatelessWidget {
                         ),
                       ),
                     ],
+                  ),
+                  const SizedBox(
+                    height: 35,
+                  ),
+                  RichText(
+                    text: TextSpan(
+                      children: <TextSpan>[
+                        TextSpan(
+                            text: '''Don't have account? ''',
+                            style: CustomTextStyle.hintText(context)),
+                        TextSpan(
+                          //SIGN UP PAGE COMMAND
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () => (() {}),
+                          text: ' SignUp',
+                          style: GoogleFonts.plusJakartaSans(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                            fontSize: 14,
+                            letterSpacing: 0.2,
+                          ),
+                        )
+                      ],
+                    ),
                   )
                 ],
               ),
