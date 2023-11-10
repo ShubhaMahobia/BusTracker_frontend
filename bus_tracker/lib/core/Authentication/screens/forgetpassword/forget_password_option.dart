@@ -45,7 +45,7 @@ class ForgetPasswordMakeSelection extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Email',
+                          'EMAIL',
                           style: CustomTextStyle.t5(context),
                         ),
                         Text(
