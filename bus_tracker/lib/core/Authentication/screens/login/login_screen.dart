@@ -42,14 +42,14 @@ class LoginScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const SizedBox(
-                    height: 40,
+                    height: 60,
                   ),
                   Text(
                     'Login To Your Account',
                     style: CustomTextStyle.t5(context),
                   ),
                   const SizedBox(
-                    height: 60,
+                    height: 40,
                   ),
                   Container(
                     width: 250,
@@ -94,6 +94,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                   GestureDetector(
+                    //FORGET PASSWORD IMPLEMENTATION
                     onTap: () {},
                     child: const SizedBox(
                       height: 5,
@@ -126,10 +127,50 @@ class LoginScreen extends StatelessWidget {
                           vertical: 20, horizontal: 15),
                     ),
                   ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      GestureDetector(
+                        //GOOGLE LOGIN IMPLEMENTATION
+                        onTap: () {},
+                        child: SvgPicture.asset(
+                          'assets/icons/google_svg.svg',
+                          height: 42,
+                          width: 42,
+                        ),
+                      ),
+                      GestureDetector(
+                        //FACEBOOK LOGIN IMPLEMENTATION
+                        onTap: () {},
+                        child: SvgPicture.asset(
+                          'assets/icons/facebook_svg.svg',
+                          height: 42,
+                          width: 42,
+                        ),
+                      ),
+                      GestureDetector(
+                        //LINKEDIN LOGIN IMPLEMENTATIOn
+                        onTap: () {},
+                        child: SvgPicture.asset(
+                          'assets/icons/linkedin_svg.svg',
+                          height: 42,
+                          width: 42,
+                        ),
+                      ),
+                    ],
+                  )
                 ],
               ),
             ),
-          )
+          ),
+          Positioned(
+            top: 25,
+            child: Image.asset(
+              'assets/logo/logo_light_bg.png',
+              height: MediaQuery.of(context).size.height * 0.55,
+              width: MediaQuery.of(context).size.width * 0.55,
+            ),
+          ),
         ],
       ),
     );
