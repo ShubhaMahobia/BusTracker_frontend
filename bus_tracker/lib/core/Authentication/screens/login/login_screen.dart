@@ -1,5 +1,6 @@
 import 'package:bus_tracker/common_widgets/Buttons/button_two.dart';
 import 'package:bus_tracker/constants/custom_fonts.dart';
+import 'package:bus_tracker/core/Authentication/screens/forgetpassword/forget_password_option.dart';
 import 'package:bus_tracker/core/Authentication/screens/signup/sign_up.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -86,27 +87,33 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  GestureDetector(
-                    //FORGET PASSWORD IMPLEMENTATION
-                    onTap: () {},
-                    child: const SizedBox(
-                      height: 5,
-                    ),
+                  const SizedBox(
+                    height: 5,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 25),
-                        child: Text(
-                          'Forget Password?',
-                          style: CustomTextStyle.hintText(context),
+                        child: TextButton(
+                          onPressed: () {
+                            showModalBottomSheet(
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20)),
+                                context: context,
+                                builder: (context) =>
+                                    const ForgetPasswordMakeSelection());
+                          },
+                          child: Text(
+                            'Forget Password?',
+                            style: CustomTextStyle.hintText(context),
+                          ),
                         ),
                       ),
                     ],
                   ),
                   const SizedBox(
-                    height: 40,
+                    height: 20,
                   ),
                   Button2(buttonText: 'L O G I N', onPressed: () {}),
                   const SizedBox(
@@ -153,7 +160,7 @@ class LoginScreen extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(
-                    height: 35,
+                    height: 25,
                   ),
                   RichText(
                     text: TextSpan(
