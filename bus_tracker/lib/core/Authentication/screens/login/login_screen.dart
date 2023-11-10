@@ -1,8 +1,10 @@
 import 'package:bus_tracker/common_widgets/Buttons/button_two.dart';
 import 'package:bus_tracker/constants/custom_fonts.dart';
+import 'package:bus_tracker/core/Authentication/screens/signup/sign_up.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -19,17 +21,6 @@ class LoginScreen extends StatelessWidget {
             color: Colors.lightBlue,
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
-          ),
-          Positioned(
-            top: 60,
-            left: 15,
-            child: GestureDetector(
-              onTap: () {},
-              child: const Icon(
-                Icons.arrow_back_sharp,
-                color: Colors.black,
-              ),
-            ),
           ),
           Positioned(
             bottom: 50,
@@ -173,7 +164,8 @@ class LoginScreen extends StatelessWidget {
                         TextSpan(
                           //SIGN UP PAGE COMMAND
                           recognizer: TapGestureRecognizer()
-                            ..onTap = () => (() {}),
+                            ..onTap = () => (Get.to(() => const SignUpScreen(),
+                                transition: Transition.fadeIn)),
                           text: ' SignUp',
                           style: GoogleFonts.plusJakartaSans(
                             fontWeight: FontWeight.bold,
