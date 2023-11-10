@@ -2,7 +2,6 @@ import 'package:bus_tracker/common_widgets/Buttons/button_one.dart';
 import 'package:bus_tracker/constants/custom_fonts.dart';
 import 'package:bus_tracker/core/Authentication/controllers/onboarding_screen_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -18,19 +17,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   void initState() {
     super.initState();
-    initialization();
-  }
-
-  void initialization() async {
-    // ignore_for_file: avoid_print
-    print('ready in 3...');
-    await Future.delayed(const Duration(milliseconds: 300));
-    print('ready in 2...');
-    await Future.delayed(const Duration(milliseconds: 200));
-    print('ready in 1...');
-    await Future.delayed(const Duration(milliseconds: 100));
-    print('go!');
-    FlutterNativeSplash.remove();
   }
 
   final controller = OnboardingScreenController();
