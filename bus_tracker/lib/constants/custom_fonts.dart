@@ -91,4 +91,13 @@ class CustomTextStyle {
       letterSpacing: 0.5,
     );
   }
+
+  static TextStyle t7(BuildContext context) {
+    return GoogleFonts.montserrat(
+      fontWeight: FontWeight.normal,
+      color: Colors.black,
+      fontSize: 16,
+      letterSpacing: 0.5,
+    );
+  }
 }

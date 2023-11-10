@@ -1,4 +1,4 @@
-import 'package:bus_tracker/core/Authentication/screens/signup/sign_up.dart';
+import 'package:bus_tracker/core/Authentication/screens/login/login_screen.dart';
 import 'package:bus_tracker/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
@@ -44,7 +44,9 @@ class _MyAppState extends State<MyApp> {
       theme: CustomTheme.lightTheme,
       darkTheme: CustomTheme.darkTheme,
       themeMode: ThemeMode.system,
-      home: const SignUpScreen(),
+      home: const Scaffold(
+        body: LoginScreen(),
+      ),
     );
   }
 }
