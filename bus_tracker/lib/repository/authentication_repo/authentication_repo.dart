@@ -1,4 +1,5 @@
 import 'package:bus_tracker/core/Authentication/screens/onboarding/onboarding_screen.dart';
+import 'package:bus_tracker/core/Home/home_page.dart';
 import 'package:bus_tracker/repository/authentication_repo/exceptions/signup_email_pw_fail.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -23,9 +24,7 @@ class AuthenticationRepository extends GetxController {
   _setInitialScreen(User? user) {
     user == null
         ? Get.offAll(() => const OnboardingScreen())
-        : Get.offAll(() => Container(
-              color: Colors.pink,
-            ));
+        : Get.offAll(() => const HomePage());
   }
 
   Future<void> createUserWithEmailAndPassword(
@@ -34,9 +33,7 @@ class AuthenticationRepository extends GetxController {
       await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
       firebaseUser.value != null
-          ? Get.offAll(() => Container(
-                color: Colors.black,
-              ))
+          ? Get.offAll(() => const HomePage())
           : Get.to(() => const OnboardingScreen());
     } on FirebaseAuthException catch (e) {
       final ex = SignUpEmailPasswordFailure.code(e.code);

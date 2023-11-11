@@ -1,5 +1,6 @@
 import 'package:bus_tracker/common_widgets/Buttons/button_two.dart';
 import 'package:bus_tracker/constants/custom_fonts.dart';
+import 'package:bus_tracker/core/Authentication/controllers/sign_up_controller.dart';
 import 'package:bus_tracker/core/Authentication/screens/forgetpassword/forget_password_option.dart';
 import 'package:bus_tracker/core/Authentication/screens/signup/sign_up.dart';
 import 'package:flutter/gestures.dart';
@@ -13,6 +14,7 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(SignUpController());
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Stack(
@@ -31,7 +33,7 @@ class LoginScreen extends StatelessWidget {
                 color: Colors.white,
               ),
               width: MediaQuery.of(context).size.width * 0.75,
-              height: MediaQuery.of(context).size.height * 0.625,
+              height: MediaQuery.of(context).size.height * 0.7,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -52,15 +54,14 @@ class LoginScreen extends StatelessWidget {
                       border: Border.all(width: 2, color: Colors.lightBlue),
                       borderRadius: BorderRadius.circular(5),
                     ),
-                    child: Center(
-                      child: TextField(
-                        style: CustomTextStyle.t6(context),
-                        decoration: InputDecoration(
-                          contentPadding: const EdgeInsets.all(8),
-                          hintText: 'Email',
-                          hintStyle: CustomTextStyle.hintText(context),
-                          border: InputBorder.none,
-                        ),
+                    child: TextField(
+                      controller: controller.emailController,
+                      style: CustomTextStyle.t6(context),
+                      decoration: InputDecoration(
+                        contentPadding: const EdgeInsets.all(8),
+                        hintText: 'Email',
+                        hintStyle: CustomTextStyle.hintText(context),
+                        border: InputBorder.none,
                       ),
                     ),
                   ),
@@ -189,7 +190,7 @@ class LoginScreen extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 25,
+            top: -40,
             child: Image.asset(
               'assets/logo/logo_light_bg.png',
               height: MediaQuery.of(context).size.height * 0.55,
