@@ -1,5 +1,6 @@
 import 'package:bus_tracker/common_widgets/Buttons/button_two.dart';
 import 'package:bus_tracker/constants/custom_fonts.dart';
+import 'package:bus_tracker/core/Authentication/controllers/sign_up_controller.dart';
 import 'package:bus_tracker/core/Authentication/screens/login/login_screen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,8 @@ class SignUpScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(SignUpController());
+
     return Scaffold(
       resizeToAvoidBottomInset: true,
       body: SingleChildScrollView(
@@ -32,7 +35,7 @@ class SignUpScreen extends StatelessWidget {
                   color: Colors.white,
                 ),
                 width: MediaQuery.of(context).size.width * 0.75,
-                height: MediaQuery.of(context).size.height * 0.625,
+                height: MediaQuery.of(context).size.height * 0.7,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
@@ -55,6 +58,7 @@ class SignUpScreen extends StatelessWidget {
                       ),
                       child: Center(
                         child: TextField(
+                          controller: controller.nameController,
                           style: CustomTextStyle.t6(context),
                           decoration: InputDecoration(
                             contentPadding: const EdgeInsets.all(8),
@@ -77,6 +81,7 @@ class SignUpScreen extends StatelessWidget {
                       ),
                       child: Center(
                         child: TextField(
+                          controller: controller.emailController,
                           style: CustomTextStyle.t6(context),
                           decoration: InputDecoration(
                             contentPadding: const EdgeInsets.all(8),
@@ -103,16 +108,15 @@ class SignUpScreen extends StatelessWidget {
                         border: Border.all(width: 2, color: Colors.lightBlue),
                         borderRadius: BorderRadius.circular(5),
                       ),
-                      child: Center(
-                        child: TextField(
-                          keyboardType: TextInputType.number,
-                          style: CustomTextStyle.t6(context),
-                          decoration: InputDecoration(
-                            contentPadding: const EdgeInsets.all(8),
-                            hintText: 'Phone Number',
-                            hintStyle: CustomTextStyle.hintText(context),
-                            border: InputBorder.none,
-                          ),
+                      child: TextField(
+                        controller: controller.phoneController,
+                        keyboardType: TextInputType.number,
+                        style: CustomTextStyle.t6(context),
+                        decoration: InputDecoration(
+                          contentPadding: const EdgeInsets.all(8),
+                          hintText: 'Phone Number',
+                          hintStyle: CustomTextStyle.hintText(context),
+                          border: InputBorder.none,
                         ),
                       ),
                     ),
@@ -128,11 +132,12 @@ class SignUpScreen extends StatelessWidget {
                       ),
                       child: Center(
                         child: TextField(
+                          controller: controller.password,
                           obscureText: true,
                           style: CustomTextStyle.t6(context),
                           decoration: InputDecoration(
                             contentPadding: const EdgeInsets.all(8),
-                            hintText: 'Enrollment Number',
+                            hintText: 'Password',
                             hintStyle: CustomTextStyle.hintText(context),
                             border: InputBorder.none,
                           ),
@@ -142,7 +147,13 @@ class SignUpScreen extends StatelessWidget {
                     const SizedBox(
                       height: 30,
                     ),
-                    Button2(buttonText: 'S I G N   U P', onPressed: () {}),
+                    Button2(
+                        buttonText: 'S I G N   U P',
+                        onPressed: () {
+                          SignUpController.instance.registerUser(
+                              controller.emailController.text.trim(),
+                              controller.password.text.trim());
+                        }),
                     const SizedBox(
                       height: 20,
                     ),
@@ -173,7 +184,7 @@ class SignUpScreen extends StatelessWidget {
               ),
             ),
             Positioned(
-              top: 25,
+              top: -40,
               child: Image.asset(
                 'assets/logo/logo_light_bg.png',
                 height: MediaQuery.of(context).size.height * 0.55,

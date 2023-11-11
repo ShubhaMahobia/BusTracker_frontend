@@ -1,6 +1,7 @@
 import 'package:bus_tracker/common_widgets/Buttons/button_one.dart';
 import 'package:bus_tracker/constants/custom_fonts.dart';
 import 'package:bus_tracker/core/Authentication/controllers/onboarding_screen_controller.dart';
+import 'package:bus_tracker/core/Authentication/screens/signup/sign_up.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
@@ -130,7 +131,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.025,
                     ),
-                    Button1(buttonText: 'Start your Journey', onPressed: () {}),
+                    Button1(
+                        buttonText: 'Start your Journey',
+                        onPressed: () {
+                          Get.to(() => const SignUpScreen(),
+                              transition: Transition.fadeIn);
+                        }),
                   ],
                 ),
               ),
