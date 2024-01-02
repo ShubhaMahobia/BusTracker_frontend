@@ -1,17 +1,12 @@
 import 'package:bus_tracker/core/Authentication/screens/login/login_screen.dart';
-import 'package:bus_tracker/firebase_options.dart';
-import 'package:bus_tracker/repository/authentication_repo/authentication_repo.dart';
+
 import 'package:bus_tracker/utils/theme/theme.dart';
-import 'package:firebase_core/firebase_core.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 
 void main() {
-  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
-  Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform)
-      .then((value) => Get.put(AuthenticationRepository()));
-  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   runApp(const MyApp());
 }
 

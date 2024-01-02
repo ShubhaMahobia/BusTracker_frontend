@@ -1,4 +1,3 @@
-import 'package:bus_tracker/repository/authentication_repo/authentication_repo.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -10,9 +9,7 @@ class HomePage extends StatelessWidget {
       color: Colors.pink,
       child: Center(
         child: ElevatedButton(
-          onPressed: () {
-            AuthenticationRepository.instance.logout();
-          },
+          onPressed: () {},
           child: const Text('LOGOUT'),
         ),
       ),
