@@ -34,7 +34,7 @@ class SignUpScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                   color: Colors.white,
                 ),
-                width: MediaQuery.of(context).size.width * 0.75,
+                width: MediaQuery.of(context).size.width * 0.85,
                 height: MediaQuery.of(context).size.height * 0.7,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -178,11 +178,13 @@ class SignUpScreen extends StatelessWidget {
               ),
             ),
             Positioned(
-              top: -40,
-              child: Image.asset(
-                'assets/logo/logo_light_bg.png',
-                height: MediaQuery.of(context).size.height * 0.55,
-                width: MediaQuery.of(context).size.width * 0.55,
+              bottom: 515,
+              child: SizedBox(
+                height: 250,
+                width: 250,
+                child: Image.asset(
+                  'assets/logo/logo_light_bg.png',
+                ),
               ),
             ),
           ],

@@ -27,7 +27,7 @@ class ForgetPasswordMakeSelection extends StatelessWidget {
           GestureDetector(
             onTap: () {},
             child: Container(
-              height: 100,
+              height: 110,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
@@ -65,7 +65,7 @@ class ForgetPasswordMakeSelection extends StatelessWidget {
           GestureDetector(
             onTap: () {},
             child: Container(
-              height: 100,
+              height: 110,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
