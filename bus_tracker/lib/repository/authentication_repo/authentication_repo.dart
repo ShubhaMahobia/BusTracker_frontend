@@ -3,7 +3,6 @@ import 'package:bus_tracker/core/Home/home_page.dart';
 import 'package:bus_tracker/repository/authentication_repo/exceptions/signup_email_pw_fail.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class AuthenticationRepository extends GetxController {
@@ -37,22 +36,22 @@ class AuthenticationRepository extends GetxController {
           : Get.to(() => const OnboardingScreen());
     } on FirebaseAuthException catch (e) {
       final ex = SignUpEmailPasswordFailure.code(e.code);
-      print(ex.message);
+      //print(ex.message);
       throw ex;
     } catch (_) {
       const ex = SignUpEmailPasswordFailure();
-      print(ex.message);
+      //print(ex.message);
       throw ex;
     }
   }
 
-  Future<void> loginUserWithEmailAndPassword(
-      String email, String password) async {
-    try {
-      await _auth.signInWithEmailAndPassword(email: email, password: password);
-    } on FirebaseAuthException catch (e) {
-    } catch (_) {}
-  }
+  // Future<void> loginUserWithEmailAndPassword(
+  //     String email, String password) async {
+  //   try {
+  //     await _auth.signInWithEmailAndPassword(email: email, password: password);
+  //   } on FirebaseAuthException catch (e) {
+  //   } catch (_) {}
+  // }
 
   Future<void> logout() async => await _auth.signOut();
 }
