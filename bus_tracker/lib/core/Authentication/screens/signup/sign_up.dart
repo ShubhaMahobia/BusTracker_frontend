@@ -50,7 +50,7 @@ class SignUpScreen extends StatelessWidget {
                       height: 30,
                     ),
                     Container(
-                      width: 250,
+                      width: 290,
                       height: 50,
                       decoration: BoxDecoration(
                         border: Border.all(width: 2, color: Colors.lightBlue),
@@ -73,7 +73,7 @@ class SignUpScreen extends StatelessWidget {
                       height: 20,
                     ),
                     Container(
-                      width: 250,
+                      width: 290,
                       height: 50,
                       decoration: BoxDecoration(
                         border: Border.all(width: 2, color: Colors.lightBlue),
@@ -102,7 +102,7 @@ class SignUpScreen extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      width: 250,
+                      width: 290,
                       height: 50,
                       decoration: BoxDecoration(
                         border: Border.all(width: 2, color: Colors.lightBlue),
@@ -124,7 +124,7 @@ class SignUpScreen extends StatelessWidget {
                       height: 20,
                     ),
                     Container(
-                      width: 250,
+                      width: 290,
                       height: 50,
                       decoration: BoxDecoration(
                         border: Border.all(width: 2, color: Colors.lightBlue),
