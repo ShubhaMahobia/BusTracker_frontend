@@ -147,13 +147,7 @@ class SignUpScreen extends StatelessWidget {
                     const SizedBox(
                       height: 30,
                     ),
-                    Button2(
-                        buttonText: 'S I G N   U P',
-                        onPressed: () {
-                          SignUpController.instance.registerUser(
-                              controller.emailController.text.trim(),
-                              controller.password.text.trim());
-                        }),
+                    Button2(buttonText: 'S I G N   U P', onPressed: () {}),
                     const SizedBox(
                       height: 20,
                     ),
