@@ -4,6 +4,7 @@ import 'package:bus_tracker/core/Authentication/controllers/sign_up_controller.d
 import 'package:bus_tracker/core/Authentication/screens/login/login_screen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:get/get.dart';
 
@@ -28,14 +29,14 @@ class SignUpScreen extends StatelessWidget {
               height: MediaQuery.of(context).size.height,
             ),
             Positioned(
-              bottom: 50,
+              bottom: 40,
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   color: Colors.white,
                 ),
-                width: MediaQuery.of(context).size.width * 0.75,
-                height: MediaQuery.of(context).size.height * 0.7,
+                width: MediaQuery.of(context).size.width * 0.85,
+                height: MediaQuery.of(context).size.height * 0.85,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
@@ -43,14 +44,14 @@ class SignUpScreen extends StatelessWidget {
                       height: 60,
                     ),
                     Text(
-                      'Start Your Journey With Us',
+                      'Welcome! To RIDEYE',
                       style: CustomTextStyle.t5(context),
                     ),
                     const SizedBox(
                       height: 30,
                     ),
                     Container(
-                      width: 250,
+                      width: 280,
                       height: 50,
                       decoration: BoxDecoration(
                         border: Border.all(width: 2, color: Colors.lightBlue),
@@ -62,7 +63,7 @@ class SignUpScreen extends StatelessWidget {
                           style: CustomTextStyle.t6(context),
                           decoration: InputDecoration(
                             contentPadding: const EdgeInsets.all(8),
-                            hintText: 'Name',
+                            hintText: 'Enrollment Number',
                             hintStyle: CustomTextStyle.hintText(context),
                             border: InputBorder.none,
                           ),
@@ -73,7 +74,7 @@ class SignUpScreen extends StatelessWidget {
                       height: 20,
                     ),
                     Container(
-                      width: 250,
+                      width: 280,
                       height: 50,
                       decoration: BoxDecoration(
                         border: Border.all(width: 2, color: Colors.lightBlue),
@@ -92,17 +93,11 @@ class SignUpScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(
-                      height: 40,
-                      child: Center(
-                        child: Text(
-                          'OR',
-                          style: CustomTextStyle.hintText(context),
-                        ),
-                      ),
+                    const SizedBox(
+                      height: 20,
                     ),
                     Container(
-                      width: 250,
+                      width: 280,
                       height: 50,
                       decoration: BoxDecoration(
                         border: Border.all(width: 2, color: Colors.lightBlue),
@@ -124,7 +119,7 @@ class SignUpScreen extends StatelessWidget {
                       height: 20,
                     ),
                     Container(
-                      width: 250,
+                      width: 280,
                       height: 50,
                       decoration: BoxDecoration(
                         border: Border.all(width: 2, color: Colors.lightBlue),
@@ -151,6 +146,49 @@ class SignUpScreen extends StatelessWidget {
                     const SizedBox(
                       height: 20,
                     ),
+                    Center(
+                      child: Container(
+                        height: 3,
+                        color: Colors.lightBlue,
+                        margin: const EdgeInsets.symmetric(
+                            vertical: 20, horizontal: 15),
+                      ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        GestureDetector(
+                          //GOOGLE LOGIN IMPLEMENTATION
+                          onTap: () {},
+                          child: SvgPicture.asset(
+                            'assets/icons/google_svg.svg',
+                            height: 42,
+                            width: 42,
+                          ),
+                        ),
+                        GestureDetector(
+                          //FACEBOOK LOGIN IMPLEMENTATION
+                          onTap: () {},
+                          child: SvgPicture.asset(
+                            'assets/icons/facebook_svg.svg',
+                            height: 42,
+                            width: 42,
+                          ),
+                        ),
+                        GestureDetector(
+                          //LINKEDIN LOGIN IMPLEMENTATIOn
+                          onTap: () {},
+                          child: SvgPicture.asset(
+                            'assets/icons/linkedin_svg.svg',
+                            height: 42,
+                            width: 42,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 25,
+                    ),
                     RichText(
                       text: TextSpan(
                         children: <TextSpan>[
@@ -175,14 +213,6 @@ class SignUpScreen extends StatelessWidget {
                     )
                   ],
                 ),
-              ),
-            ),
-            Positioned(
-              top: -40,
-              child: Image.asset(
-                'assets/logo/logo_light_bg.png',
-                height: MediaQuery.of(context).size.height * 0.55,
-                width: MediaQuery.of(context).size.width * 0.55,
               ),
             ),
           ],
