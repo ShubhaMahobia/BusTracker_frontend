@@ -7,6 +7,7 @@ class ForgetPasswordMakeSelection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: Colors.white,
       padding: const EdgeInsets.all(30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,6 +38,7 @@ class ForgetPasswordMakeSelection extends StatelessWidget {
                 children: [
                   const Icon(
                     Icons.mail_outline_outlined,
+                    color: Colors.black,
                     size: 55,
                   ),
                   Padding(
@@ -75,6 +77,7 @@ class ForgetPasswordMakeSelection extends StatelessWidget {
                 children: [
                   const Icon(
                     Icons.phone,
+                    color: Colors.black,
                     size: 55,
                   ),
                   Padding(

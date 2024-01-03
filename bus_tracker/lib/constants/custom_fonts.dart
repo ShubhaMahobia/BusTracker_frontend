@@ -67,7 +67,7 @@ class CustomTextStyle {
 
   static TextStyle t5(BuildContext context) {
     return GoogleFonts.plusJakartaSans(
-      fontWeight: FontWeight.w700,
+      fontWeight: FontWeight.w900,
       color: Colors.black,
       fontSize: 18,
       letterSpacing: 0.2,

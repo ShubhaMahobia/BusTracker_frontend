@@ -27,14 +27,14 @@ class LoginScreen extends StatelessWidget {
               height: MediaQuery.of(context).size.height,
             ),
             Positioned(
-              bottom: 50,
+              bottom: 40,
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   color: Colors.white,
                 ),
                 width: MediaQuery.of(context).size.width * 0.85,
-                height: MediaQuery.of(context).size.height * 0.7,
+                height: MediaQuery.of(context).size.height * 0.85,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
@@ -42,14 +42,14 @@ class LoginScreen extends StatelessWidget {
                       height: 60,
                     ),
                     Text(
-                      'Login To Your Account',
+                      'Heyy, Welcome Back!!!',
                       style: CustomTextStyle.t5(context),
                     ),
                     const SizedBox(
                       height: 40,
                     ),
                     Container(
-                      width: 290,
+                      width: 280,
                       height: 50,
                       decoration: BoxDecoration(
                         border: Border.all(width: 2, color: Colors.lightBlue),
@@ -70,7 +70,7 @@ class LoginScreen extends StatelessWidget {
                       height: 20,
                     ),
                     Container(
-                      width: 290,
+                      width: 280,
                       height: 50,
                       decoration: BoxDecoration(
                         border: Border.all(width: 2, color: Colors.lightBlue),
@@ -91,28 +91,6 @@ class LoginScreen extends StatelessWidget {
                     ),
                     const SizedBox(
                       height: 5,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 25),
-                          child: TextButton(
-                            onPressed: () {
-                              showModalBottomSheet(
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(20)),
-                                  context: context,
-                                  builder: (context) =>
-                                      const ForgetPasswordMakeSelection());
-                            },
-                            child: Text(
-                              'Forget Password?',
-                              style: CustomTextStyle.hintText(context),
-                            ),
-                          ),
-                        ),
-                      ],
                     ),
                     const SizedBox(
                       height: 20,
@@ -186,18 +164,30 @@ class LoginScreen extends StatelessWidget {
                           )
                         ],
                       ),
-                    )
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 25),
+                          child: TextButton(
+                            onPressed: () {
+                              showModalBottomSheet(
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20)),
+                                  context: context,
+                                  builder: (context) =>
+                                      const ForgetPasswordMakeSelection());
+                            },
+                            child: Text(
+                              'Forget Password?',
+                              style: CustomTextStyle.hintText(context),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ],
-                ),
-              ),
-            ),
-            Positioned(
-              bottom: 515,
-              child: SizedBox(
-                height: 250,
-                width: 250,
-                child: Image.asset(
-                  'assets/logo/logo_light_bg.png',
                 ),
               ),
             ),
